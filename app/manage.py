@@ -2,10 +2,14 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+#from neural_roots.settings import base
 
 def main():
     """Run administrative tasks."""
+    # if base.DEBUG:
+    #     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'neural_roots.settings.settings_dev')
+    # else:
+    #     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'neural_roots.settings_prod')
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'neural_roots.settings')
     try:
         from django.core.management import execute_from_command_line

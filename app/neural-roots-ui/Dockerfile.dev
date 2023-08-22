@@ -1,0 +1,9 @@
+# Docker Development
+
+FROM  node:alpine3.16 as node
+WORKDIR /neural-roots-web
+COPY package.json /neural-roots-web
+RUN npm install 
+COPY . .
+CMD [ "npm","start" ]
+

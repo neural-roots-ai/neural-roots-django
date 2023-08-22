@@ -1,6 +1,10 @@
 version: '3.8'
 
 services:
+  react:
+    build:
+      context: ./app/neural-roots-ui
+      dockerfile: Dockerfile.dev
   web:
     build: ./app
     command: python manage.py runserver 0.0.0.0:8000
