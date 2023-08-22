@@ -2,6 +2,7 @@
 version: '3.8'
 
 services:
+  
   web:
     build:
       context: ./app
@@ -10,12 +11,14 @@ services:
     volumes:
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/mediafiles
+      #- react_build:/home/app/web
     expose:
       - 8000
     env_file:
       - ./.env.staging
     depends_on:
       - db
+      #- react-ui
   db:
     image: postgres:13.0-alpine
     volumes:
@@ -38,6 +41,14 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     depends_on:
       - web
+  
+  # react-ui:
+  #   build:
+  #     context: ./app/neural-roots-ui
+  #     dockerfile: Dockerfile.prod
+  #   volumes:
+  #     - react_build:/usr/src/app
+  
   acme-companion:
     image: nginxproxy/acme-companion
     env_file:
@@ -59,3 +70,4 @@ volumes:
   html:
   vhost:
   acme:
+  #react_build:

@@ -16,7 +16,7 @@ media
 
 # Site-specific configurations
 settings_local.py
-
+*.env
 
 # Compiled Python files
 *.pyc
@@ -40,4 +40,6 @@ env/
 
 # macOS folder attributes
 .DS_Store
+
+
 

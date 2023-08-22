@@ -27,6 +27,13 @@ COPY ./requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/app/wheels -r requirements.txt
 
 
+FROM  node:alpine3.16 as node
+WORKDIR /usr/src/app
+COPY ./neural-roots-ui /usr/src/app
+RUN npm install
+RUN npm run build
+
+
 #########
 # FINAL #
 #########
@@ -62,6 +69,8 @@ RUN chmod +x  $APP_HOME/entrypoint.prod.sh
 
 # copy project
 COPY . $APP_HOME
+RUN mkdir -p $APP_HOME/neural-roots-ui/build
+COPY --from=node /usr/src/app/build $APP_HOME/neural-roots-ui/build
 
 # chown all the files to the app user
 RUN chown -R app:app $APP_HOME
