@@ -5,6 +5,8 @@ services:
     build:
       context: ./app/neural-roots-ui
       dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
   web:
     build: ./app
     command: python manage.py runserver 0.0.0.0:8000
