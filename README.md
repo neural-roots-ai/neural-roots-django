@@ -7,12 +7,9 @@
 sudo docker compose -f docker-compose.prod.yml up -d --build
 sudo docker compose -f docker-compose.prod.yml logs acme-companion
 sudo docker compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
-sudo docker compose -f docker-compose.prod.yml exec web python manage.py collectstatics --noinput
+sudo docker compose -f docker-compose.prod.yml exec web python manage.py collectstatic --noinput
 sudo docker compose -f docker-compose.prod.yml down -v
 
-neural-roots-database.cfuaoucsa6op.ap-south-1.rds.amazonaws.com
-neural-roots-database.cfuaoucsa6op.ap-south-1.rds.amazonaws.com
-neural-roots-database.cfuaoucsa6op.ap-south-1.rds.amazonaws.com
 
 ## Staging
 docker-compose -f docker-compose.staging.yml exec web python manage.py migrate --no-input --clear
