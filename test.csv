@@ -1,0 +1,3 @@
+id,email,first_name,last_name,phone_no,will_pay,category,skills,university,degree,job,cv_link,work_experience,linked_in_link,source
+1,"prateeksahu147@gmail.com","Prateek","Sahu","7748864147", "Yes", "python, AI, ML", "RGPV", "B.Tech", "Data Scientist",,2,,"LinkedIn"
+2,"pra.sahu147@gmail.com","Prath","Sahu","7748864147", "Yes", "python, ML", "RGPV", "B.Tech", "Data Scientist",,2,,"Google"

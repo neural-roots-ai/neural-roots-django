@@ -18,7 +18,7 @@ export const AuthProvider = ({children}) => {
     let loginUser = async (e) =>{
 
         e.preventDefault()
-        let response = await fetch('http://127.0.0.1:8000/workspace-api/token/', {
+        let response = await fetch('http://127.0.0.1:8000/api/authentication/token/', {
             method : 'POST',
             headers :{
                 'Content-Type':'application/json'
@@ -47,8 +47,8 @@ export const AuthProvider = ({children}) => {
     }
 
     let updateTokens = async () =>{
-        console.log('update tokens')
-        let response = await fetch('http://127.0.0.1:8000/workspace-api/token/refresh/', {
+        //console.log('update tokens')
+        let response = await fetch('http://127.0.0.1:8000/api/authentication/token/refresh/', {
             method : 'POST',
             headers :{
                 'Content-Type':'application/json'
@@ -57,14 +57,14 @@ export const AuthProvider = ({children}) => {
         })
         let data = await response.json()
         
-        console.log('UPDATE TOKENS' , data)
+        //console.log('UPDATE TOKENS' , data)
         if(response.status == 200){
             setAuthTokens(data)
             setUser(jwt_decode(data.access))
             localStorage.setItem('authTokens', JSON.stringify(data))
         }
         else{
-            console.log('in else part of update ')
+            //console.log('in else part of update ')
             logOutUser()
         }
     }
@@ -88,7 +88,7 @@ export const AuthProvider = ({children}) => {
     }, [authTokens, loading]
     )
 
-    console.log(user)
+    //console.log(user)
     return(
         <AuthContext.Provider value={contextData}>
             {children}

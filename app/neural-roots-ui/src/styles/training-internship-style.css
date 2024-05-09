@@ -1,0 +1,363 @@
+#training-internship-page-main{
+  font-family: "Times New Roman", Times, serif;
+}
+/* ===================================================================== */
+/* Header */
+/* ===================================================================== */
+
+#training-internship-page{     
+  background-image: url("../assets/img/clients/training-and-internship/training-internship-hero.png");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: #000000;
+}
+
+#training-internship-page .training-internship-page-header nav{
+  background-color: rgba(178, 143, 16, 0.227);
+  background-image: none;
+
+}
+
+#training-internship-page a img{
+  padding-left: 0px;
+  padding-right: 50px;
+  height: 60px;
+}
+
+#training-internship-page .training-internship-page-nav-link a{
+  font-size: medium;
+  color: #000000;
+}
+
+#training-internship-page .training-internship-page-nav-link a:hover{
+  font-size: medium;
+  color: darkcyan;
+}
+
+#training-internship-page .training-internship-page-intro{
+  box-shadow:10px ;
+  padding-top: 200px;
+  padding-left: 100px;
+  margin-right: 100%;
+  width: 50%;
+
+}
+
+#training-internship-page section ul{
+  line-height: 1.5em;
+  list-style-type: circle;
+}
+#training-internship-page .training-internship-page-heading{
+  padding-top: 5px;
+  padding-bottom: 10px;
+  color: rgb(0, 0, 0);
+  
+}
+#training-internship-page .training-internship-page-subheading{
+
+  color: rgb(3, 3, 3);
+  font-weight: 500;
+  /* background-image: linear-gradient(to left, #000000, #ffffff); */
+
+}
+#training-internship-page section .training-internship-page-key-highlights{
+
+
+  color: rgb(0, 0, 0);
+  font-weight: 300;
+  /* background-image: linear-gradient(to left, #000000, #ffffff); */
+}
+
+#training-internship-page section button{
+  background-color: darkcyan; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px; 
+}
+
+#training-internship-page section button:hover{
+  background-color: white;
+  border: none;
+  color: darkcyan;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+}
+
+
+/* ===================================================================== */
+/* Global Location */
+/* ===================================================================== */
+#training-internship-page-global-location{
+  background-color: #F5F5F5;
+  height: 100vh;
+}
+
+#training-internship-page-global-location img{
+  height: 60vh;
+}
+
+#training-internship-page-global-location h1{
+  color: black;
+  padding: 50px;
+  text-align: center;
+}
+
+#training-internship-page-global-location p{
+  padding: 30px;
+}
+
+#training-internship-page-global-location ul{
+  padding: 30px;
+  align-items: center;
+}
+
+#training-internship-page-global-location li{
+  padding: 4px;
+  list-style-type: square;
+  text-align: left;
+  align-items: center;
+} 
+
+/* ===================================================================== */
+/* What we Offer */
+/* ===================================================================== */
+#training-internship-page-overview{
+  background-color: blanchedalmond;
+  height: 100vh;
+}
+
+#training-internship-page-overview h1{
+  color: black;
+  padding: 50px;
+  text-align: center;
+}
+
+/* ===================================================================== */
+/* Execution */
+/* ===================================================================== */
+
+
+
+#training-internship-page-process{
+  background-color: white;
+  height: 100vh;
+}
+
+#training-internship-page-process h1{
+  color: black;
+  padding: 50px;
+  text-align: center;
+}
+
+/* ===================================================================== */
+/* Our Parters */
+/* ===================================================================== */
+
+
+.slide {
+  display: inline-flex;
+  width: auto;
+  animation: slide-left-coins 9s linear 2s infinite
+}
+
+.child {
+  width: auto;
+  height: 50px;
+  background-color: transparent;
+  margin: 40px
+}
+.partner-logo{
+  width: auto;
+  height: 50px;
+}
+
+@keyframes slide-left-coins {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-350px)
+  }
+}
+
+/* ===================================================================== */
+/* Our Programs */
+/* ===================================================================== */
+
+
+#training-internship-page-our-program{
+  background-color: white;
+  height: 100vh;
+}
+
+
+#training-internship-page-our-program .program-title{
+  padding:15px;
+}
+
+#training-internship-page-our-program .tools-skills{
+  margin-top: 0px;
+}
+#training-internship-page-our-program .outcomes{
+  padding-top: 100px;
+}
+
+
+
+/* Container Styles (Optional) */
+
+/* ===================================================================== */
+/* FAQs */
+/* ===================================================================== */
+
+
+#training-internship-page-faq{
+  background-color: white;
+  height: 150vh;
+}
+
+#training-internship-page-faq h1{
+  padding: 70px;
+  text-align: center;
+}
+
+
+#training-internship-program-overview-layout{
+  height: 100vh;
+  padding: auto;
+}
+
+
+
+
+/* ===================================================================== */
+/* Mobile View */
+/* ===================================================================== */
+
+
+@media only screen and (max-width: 768px) {
+
+  html{
+    font-size: 16px;
+    h1 {font-size: 1.8em;}
+  }
+  #training-internship-page .training-internship-page-intro{
+    box-shadow:10px;
+    padding: 50px;
+    margin: auto;
+    margin-top: 100px;
+    width: auto;
+  
+  }
+
+  #training-internship-page .training-internship-page-heading{
+    padding: 0px;
+    color: rgb(0, 0, 0);
+  }
+
+  #training-internship-page .training-internship-page-heading h1{
+    font-size: 1.8em;
+  }
+
+  #training-internship-page section button{
+    background-color: darkcyan; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width:100%;
+    
+  }
+  
+  #training-internship-page section button:hover{
+    background-color: white;
+    border: none;
+    color: darkcyan;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width:100%;
+
+  }
+
+  #training-internship-page-global-location img{
+    height: 30vh;
+  }
+  #training-internship-page-global-location p{
+    padding: 0px;
+  }
+  
+  #training-internship-page-global-location ul{
+    padding: 10px;
+    align-items: center;
+  }
+  
+  #training-internship-page-global-location li{
+    padding: 4px;
+    list-style-type: square;
+    text-align: left;
+    align-items: center;
+  } 
+
+  #training-internship-page-process .partner-logo{
+    width: auto;
+    height: 30px;
+  }
+  
+  .child {
+    width: auto;
+    height: 50px;
+    background-color: transparent;
+    margin: 10px
+  }
+
+  #training-internship-page-our-program{
+    background-color: gold;
+    height: 140vh;
+  }
+  #training-internship-page-our-program h1{
+    padding: 40px;
+  }
+  
+  #training-internship-comp-program-details .program-img{
+    height: 200px;
+  }
+
+  #training-internship-page-faq{
+    background-color: white;
+    height: 100vh;
+  }
+  
+  #training-internship-page-faq h1{
+    padding: 40px;
+    text-align: center;
+  }
+
+  #training-internship-page-process .process-img{
+    width: auto;
+    height: 10%;
+  }
+  
+
+
+}
+
+
+
+
+
+
+

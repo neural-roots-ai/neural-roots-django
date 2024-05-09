@@ -5,7 +5,7 @@ export default class TeamServices {
     async getTeamMember (authTokens ,username){
         var response = null
         try{
-            response = await fetch('http://127.0.0.1:8000/workspace-api/employee-list/'+username, {
+            response = await fetch('http://127.0.0.1:8000/workspace-api/employee-list/', {
                 method:'GET',
                 headers:{
                     'Content-Type':'application/json',

@@ -9,7 +9,9 @@ urlpatterns = [
     #path("", image_upload, name="upload"),
     path("", TemplateView.as_view(template_name='index.html'), name='index'), # React static file
     #path("",  include('home.urls'), name="home"),
-    path("api/",  include('api.urls'), name="api"),
+    #path("api/",  include('api.urls'), name="api"),
+    path("api/authentication/",  include('api.authentication.urls'), name="api"),
+    path("api/email-automation/",  include('api.email_automation.urls'), name="email_automation"),
     path("admin/", admin.site.urls),
 ]
 

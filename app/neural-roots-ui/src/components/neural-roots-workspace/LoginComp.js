@@ -1,20 +1,24 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
+import {Form,Button, Container} from 'react-bootstrap';
+import AuthContext from "../../context/AuthContext";
+import "../../styles/LoginStyle.css"
 
-import { isEmail, isEmpty, isLength, isContainWhiteSpace } from '../../shared/validator.js';
-import { Container } from "react-bootstrap";
-
-
-const LoginComp = () =>{
+const LoginComp = () => {
+  let {loginUser} = useContext(AuthContext)
+  let {user } = useContext(AuthContext)
 
     return(
-        <div>
-           <form onSubmit={""}>
+      <section id="login">
+        <Container>
+          <form onSubmit={loginUser}>
             <input type="text" name="username" placeholder="Username" />
             <input type="password" name="password" placeholder="Password" />
             <input type="submit" placeholder="login"/>
           </form>
-        </div>
-    )
-}
+        </Container>
+      </section>
+      );
+};
 
 export default LoginComp
+

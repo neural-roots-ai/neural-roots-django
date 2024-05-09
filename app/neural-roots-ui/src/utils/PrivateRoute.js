@@ -8,7 +8,7 @@ import LoginPage from '../pages/neural-roots-workspace/LoginPage';
 const useAuth = () =>{
     //const user = {logIn : true};
     const {user} = useContext(AuthContext)
-    console.log('useAuth : ',user)
+    //console.log('useAuth : ',user)
     if(user != null){
         return true;
     }
@@ -50,7 +50,7 @@ const PrivateRoute = ({children, ...rest}) => {
     // else{
     //     return < Navigate to = "/login/" replace state ={{from : location}} />
     // } 
-    console.log(useAuth())
+    //console.log(useAuth())
     if(useAuth()){
         return <Outlet />
     }

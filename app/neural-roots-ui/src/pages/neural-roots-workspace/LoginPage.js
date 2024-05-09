@@ -9,6 +9,7 @@ import HeroImg from '../../assets/img/clients/hero-img.png';
 const LoginPage = () => {
     const navigate = useNavigate()
     let {user} = useContext(AuthContext)
+    console.log("user__", user)
         if(user == null)
         {return(
             <div id="login-page">

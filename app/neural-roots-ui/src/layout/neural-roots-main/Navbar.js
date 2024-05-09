@@ -18,11 +18,12 @@ function NavbarMain({setIsLoginClick}) {
           <img src= {LogoImg} alt="" className="img-fluid"></img>
         </a>
         <Navbar id="navbar" className="navbar">
-          <a className="nav-link scrollto  " href="#hero">Home</a>
+          <a className="nav-link scrollto" href="#hero">Home</a>
           <a className="nav-link scrollto" href="#about"> About</a>
           <a className="nav-link scrollto" href="#services">Service </a>
           <a className="nav-link scrollto" href="#contact">Contact</a>
-          {/* <Link  to="login" onClick={onClickLogin}>Login</Link> */}
+          <Link style={{textDecoration: 'none'}} to="training-and-internship">Training & Internship</Link>
+          <Link style={{textDecoration: 'none'}} to="login" onClick={onClickLogin}>Login</Link>
           {/* <Link><a className="nav-link scrollto" to="#contact">Case Study</a></Link>
           <Link><a className="nav-link scrollto" to=" ">Blog</a></Link>
           <Link><a className="nav-link scrollto" to=" ">Career</a></Link> */}
