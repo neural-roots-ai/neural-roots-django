@@ -36,5 +36,5 @@ jobs:
         with:
           context: "{{defaultContext}}"
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: 'main_'
           labels: ${{ steps.meta.outputs.labels }}
