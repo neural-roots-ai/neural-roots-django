@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: "./app"
-          file: Dockerfile.prod
+          file: "./app/Dockerfile.prod"
           push: true
           tags: 'v1.0'
           labels: ${{ steps.meta.outputs.labels }}
