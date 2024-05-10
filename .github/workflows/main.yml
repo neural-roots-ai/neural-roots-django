@@ -41,8 +41,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: "./app"
-          file: "./app/Dockerfile.prod"
+          context: "."
+          file: "./docker-compose.staging.yml"
           push: true
           tags: 'v1.0'
           labels: ${{ steps.meta.outputs.labels }}
