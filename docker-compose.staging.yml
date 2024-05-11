@@ -14,17 +14,11 @@ services:
       #- react_build:/home/app/web
     expose:
       - 8000
+    ports:
+      - 8000
     env_file:
       - ./.env.staging
-    depends_on:
-      - db
-      #- react-ui
-  db:
-    image: postgres:13.0-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - ./.env.staging.db
+
   nginx-proxy:
     container_name: nginx-proxy
     build: nginx
@@ -63,7 +57,6 @@ services:
       - nginx-proxy
 
 volumes:
-  postgres_data:
   static_volume:
   media_volume:
   certs:
