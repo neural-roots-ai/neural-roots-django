@@ -1,30 +1,20 @@
-
 version: '3.8'
-
-services:
-  
+services:  
   web:
     build:
-      context: ./app
+      context: .
       dockerfile: Dockerfile.prod
     command: gunicorn neural_roots.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/mediafiles
-      #- react_build:/home/app/web
     expose:
+      - 8000
+    ports:
       - 8000
     env_file:
       - ./.env.staging
-    depends_on:
-      - db
-      #- react-ui
-  db:
-    image: postgres:13.0-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-    env_file:
-      - ./.env.staging.db
+
   nginx-proxy:
     container_name: nginx-proxy
     build: nginx
@@ -42,13 +32,6 @@ services:
     depends_on:
       - web
   
-  # react-ui:
-  #   build:
-  #     context: ./app/neural-roots-ui
-  #     dockerfile: Dockerfile.prod
-  #   volumes:
-  #     - react_build:/usr/src/app
-  
   acme-companion:
     image: nginxproxy/acme-companion
     env_file:
@@ -61,13 +44,11 @@ services:
       - acme:/etc/acme.sh
     depends_on:
       - nginx-proxy
-
+      
 volumes:
-  postgres_data:
   static_volume:
   media_volume:
   certs:
   html:
   vhost:
   acme:
-  #react_build:

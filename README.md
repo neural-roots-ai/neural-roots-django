@@ -21,3 +21,6 @@ sudo docker compose -f docker-compose.staging.yml up -d --build
 
 docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 docker-compose -f docker-compose.staging.yml exec web python manage.py collectstatic --no-input --clear
+
+Ref
+https://forum.djangoproject.com/t/mime-type-text-html-is-not-a-supported-404-static-files-nginx-uwsgi-production/10459
