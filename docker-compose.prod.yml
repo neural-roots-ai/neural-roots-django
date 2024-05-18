@@ -1,10 +1,8 @@
-
 version: '3.8'
-
 services:
   web:
     build:
-      context: ./app
+      context: .
       dockerfile: Dockerfile.prod
     command: gunicorn neural_roots.wsgi:application --bind 0.0.0.0:8000
     volumes:
@@ -31,6 +29,7 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     depends_on:
       - web
+
   acme-companion:
     image: nginxproxy/acme-companion
     env_file:
