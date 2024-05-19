@@ -21,17 +21,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-blhen)fbis2f3d3n3@j-mw2)$!2-fco9p+gv^e!@@o-sm!b#qb'
-#SECRET_KEY = os.environ.get("SECRET_KEY")
-SECRET_KEY = "django-insecure-blhen)fbis2f3d3n3@j-mw2)$!2-fco9p+gv^e!@@o-sm!b#qb"
+SECRET_KEY = os.environ.get("SECRET_KEY")
+#SECRET_KEY = "django-insecure-blhen)fbis2f3d3n3@j-mw2)$!2-fco9p+gv^e!@@o-sm!b#qb"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = bool(os.environ.get("DEBUG", default=0))
+#DEBUG = True
+DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = ["*", "neuralroots.in", "www.neuralroots.in"]
+#ALLOWED_HOSTS = ["*", "neuralroots.in", "www.neuralroots.in"]
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-#ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # Application definition
 
@@ -135,7 +135,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'neural-roots-ui','build', 'static'), ] 
+#STATICFILES_DIRS=[os.path.join(BASE_DIR, 'build', 'static'), ] 
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "mediafiles"
@@ -146,7 +146,7 @@ MEDIA_ROOT = BASE_DIR / "mediafiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #CSRF_TRUSTED_ORIGINS = ["http://localhost:1337"]
-#CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split(" ")
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS").split(" ")
 
-#SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 

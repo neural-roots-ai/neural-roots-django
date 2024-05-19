@@ -1,8 +1,17 @@
 version: '3.8'
+
 services:
-  web:
+
+  frontend:
     build:
-      context: .
+      context: ./src/neural-roots-frontend
+      dockerfile: Dockerfile.prod
+    volumes:
+      - build_file:/usr/src/app/build
+
+  backend:
+    build:
+      context: ./src/neural-roots-backend
       dockerfile: Dockerfile.prod
     command: gunicorn neural_roots.wsgi:application --bind 0.0.0.0:8000
     volumes:
@@ -21,14 +30,15 @@ services:
       - 443:443
       - 80:80
     volumes:
+      - build_file:/usr/share/nginx/html
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/mediafiles
       - certs:/etc/nginx/certs
-      - html:/usr/share/nginx/html
       - vhost:/etc/nginx/vhost.d
       - /var/run/docker.sock:/tmp/docker.sock:ro
     depends_on:
-      - web
+      - frontend
+      - backend
 
   acme-companion:
     image: nginxproxy/acme-companion
@@ -37,13 +47,13 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - certs:/etc/nginx/certs
-      - html:/usr/share/nginx/html
       - vhost:/etc/nginx/vhost.d
       - acme:/etc/acme.sh
     depends_on:
       - nginx-proxy
 
 volumes:
+  build_file:
   static_volume:
   media_volume:
   certs:
